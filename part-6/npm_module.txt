@@ -1,0 +1,19 @@
+1. npm -v -> untuk mengecek versi yang ada di komputer kita
+2. npm init -> digunakan untuk meng-initialitation
+3. npm run <script> -> untuk menjalan entry point
+4. npm i <packages> -> untuk menginstall packages npm
+5. npm install <packages> -> untuk menginstall packages npm
+6. npm unisntall <packages> -> menghapus packages npm
+7. npm i <packages>@12.5.2 -> untuk menginstall packages npm yng sesuai version
+8. npm i -g nodemon -> untuk menginstall nodemon secara global
+9. npm i --save-dev -> untuke menginstall nodemon secara local
+10. nodemon index.js -> untuk menjalakan packages nodemon
+
+
+
+------------packages NPM-----------------
+1. validator -> digunakan untuk memvalidkan string atau input yg disesuaikan
+2. chalk -> untuk mendesign tulisan output di terminal
+3. nodemon -> (node monitor)digunakan unut melakukan pengecekan setiap perubahan yang akan terjadi 
+4. uuid -> untuk membuat uuid random 
+5. Date-fns -> untuk memanipulasi waktu
