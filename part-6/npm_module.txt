@@ -17,3 +17,5 @@
 3. nodemon -> (node monitor)digunakan unut melakukan pengecekan setiap perubahan yang akan terjadi 
 4. uuid -> untuk membuat uuid random 
 5. Date-fns -> untuk memanipulasi waktu
+6. yargs -> digunakan untuk membantu intraktif command line tools
+
