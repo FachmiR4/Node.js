@@ -1,0 +1,20 @@
+ExpressJS
+1. web app framework yang dibuat diatas nodeJS.
+2. menyediakan antarmuka yang minimal untuk kakas yang diperlukan dalam membuat sebuah aplikasi web.
+3. membantu pengolaan aliran data dari server ke aplikasi.
+4. MERN, MEAN, MEVN Stack (MongoDB, ExpressJS, React | Angular|Veu, NodeJS)
+
+fitur ExpresJS
+1. menangani request dengan berbagi metode HTTP dengan mudah (Routes)
+2. MVC (Model-View-Controller)
+3. Terintegrasi dengan 'view' rendering engine, untuk mengelola template
+4. middleware
+
+opinionated
+-> adalah aturan yang sudah diatur oleh framework-nya sendiri.
+
+unopinionated
+1. tidak ada aturan baku untuk membuat sesuatu
+2. flexibel
+3. menentukan sendiri structure aplikasi
+4. bongkar pasang middleware
