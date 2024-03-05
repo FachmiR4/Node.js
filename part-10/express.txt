@@ -18,3 +18,16 @@ unopinionated
 2. flexibel
 3. menentukan sendiri structure aplikasi
 4. bongkar pasang middleware
+
+view Engine / tamplate engine
+1. memungkinkan kita membuat file tamplate statis untuk aplikasi kita
+2. Engine tersebut mengganti variable pada tamplate kita dengan nilai sebenarnya, lalu menampilkan dalam bentuk HTML
+3. mempermudah pembuatan halaman HTML
+
+EJS (Embedded Javascript Tamplate)
+1. simple syntax
+2. simple setup
+3. speedy execution
+4. easy debugging
+5. active development
+6. awalnya dibuat oleh pembuat express
