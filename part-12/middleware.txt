@@ -1,0 +1,14 @@
+middleware adalah sebuah software yang menghubungkan software atau aplikasi lain
+"sebuah software yang berada diantara sistem operasi dan aplikasi"
+
+express middleware => aplikasi express itu sebenarnya berisi serangkaian pemanggilan fungsi middleware
+
+fungsi middleware adalah sebuah fungsi yang memiliki akses ke object request (req), object response (res), dan fungsi middleware berikutnya (next)
+
+express middleware
+1. user-defined middleware
+    -> application-lavel middleware
+    -> router-lavel middleware
+    -> error-handling middleware
+2. built-in middleware
+3. third-party middleware
