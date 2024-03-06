@@ -1,7 +1,7 @@
 const express = require('express')
 const expressLayout = require('express-ejs-layouts');
 const app = express();
-const { loadData, findContact, addContact, cekDuplikat } = require('./utils/contacts');
+const { loadData, findContact, addContact, cekDuplikat, deleteContact, updateContact} = require('./utils/contacts');
 const { body, validationResult, check } = require('express-validator');
 const session = require('express-session');
 const cookieParser = require('cookie-parser');
@@ -67,7 +67,9 @@ app.get('/contact', function (req, res) {
       msg: req.flash('msg')
     })
 })
-// halaman detail contact
+
+
+// halaman tambah data contact
 app.get('/contact/add', (req, res) => {
   res.render('add-contact', {
     title: 'Form Tambah Data Contact',
@@ -105,6 +107,62 @@ app.post('/contact', [
 
 })
 
+// menghapus data
+app.get('/contact/delete/:nama', (req, res) => {
+  const contact = findContact(req.params.nama);
+  // jika contact tidak ada 
+   if(!contact){
+    res.status(404);
+    res.send('<h1>404</h1>')
+  }else{
+      deleteContact(req.params.nama);
+      req.flash('msg', 'Data contact berhasil dihapus!')
+      res.redirect('/contact');
+  }
+ 
+})
+// mengedit data
+app.get('/contact/edit/:nama', (req, res) => {
+  const contact = findContact(req.params.nama);
+  res.render('edit-contact', {
+    title: 'Form Data Data Contact',
+    layout: 'layout/main-layout',
+    contact
+  })
+})
+
+//proses ubah data 
+app.post('/contact/update', [
+  body('nama').custom((value, {req}) => {
+      const duplikat = cekDuplikat(value);
+      if(value !== req.body.oldNama && duplikat){
+        throw new Error('Nama contact sudah Digunakan');
+      }
+      return true;
+  }),
+  check('email', 'Email tidak valid!').isEmail(),
+  check('noHP', 'No HP tidak valid!').isMobilePhone('id-ID'),
+], (req, res) => {
+  const errors = validationResult(req);
+  if(!errors.isEmpty()){
+    // return res.status(404).json({errors: errors.array()});
+    res.render('edit-contact', {
+      title: 'Form Edit Data Contact',
+      layout: 'layout/main-layout',
+      errors: errors.array(),
+      contact: req.body
+    })
+  }else{
+     updateContact(req.body);
+    // //  kirimkan flash message
+     req.flash('msg', 'Data contact berhasil ditambahkan!')
+    // //mengarahkan file ke file ke yang lain
+     res.redirect('/contact');
+  }
+
+})
+
+// halaman detail
 app.get('/contact/:nama', function (req, res) {
   const contact = findContact(req.params.nama);
     res.render('detail', {
