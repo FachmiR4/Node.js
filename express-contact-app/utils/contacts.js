@@ -1,3 +1,4 @@
+const { constants } = require('buffer');
 const fs = require('fs');
 const path = require('path');
 
@@ -8,14 +9,14 @@ if(!fs.existsSync(dirPath)){
 }
 
 //membuat file contact.json jika blom ada
-const dataPath = path.join(__dirname, 'data', 'contact.json');
+const dataPath = path.join(__dirname, 'data', 'contacts.json');
 if(!fs.existsSync(dataPath)){
     fs.writeFileSync(dataPath, '[]', 'utf-8');
 }
 
 // ambil semua data dicontact .json
 const loadData = () => {
-    const fileBuffer = fs.readFileSync(path.join(__dirname, 'data', 'contact.json'), "utf-8");
+    const fileBuffer = fs.readFileSync(path.join(__dirname, 'data', 'contacts.json'), "utf-8");
     const contacts = JSON.parse(fileBuffer);
     return contacts;
 }
@@ -26,4 +27,22 @@ const findContact = (nama) => {
     return contact; 
 }
 
-module.exports = {loadData, findContact}
+// menuliskan / menimpa file contacts.json dengan data yang baru 
+const saveContact = (contacts) => {
+    fs.writeFileSync('utils/data/contacts.json', JSON.stringify(contacts))
+}
+
+// manambahkan data contact baru
+const addContact = (contact) => {
+    const contacts = loadData();
+    contacts.push(contact);
+    saveContact(contacts)
+}
+
+// cek nama yang duplikat
+const cekDuplikat = (nama) => {
+    const contacts = loadData();
+    return contacts.find(contact => contact.nama == nama);
+}
+
+module.exports = {loadData, findContact, addContact, cekDuplikat}
