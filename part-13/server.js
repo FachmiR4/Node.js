@@ -4,6 +4,7 @@ const path =  require("path");
 const cors = require('cors')
 const { logger } = require('./middleware/logEvent');
 const errorHandler  = require('./middleware/errorHandler');
+const routes = require('./routes/subdir');
 const PORT = process.env.PORT || 3500;
 
 // custom middleware logger
@@ -33,21 +34,11 @@ app.use(express.json());
 // serve static filter
 app.use(express.static(path.join(__dirname, '/public')));
 
-app.get('^/$|/index(.html)?', (req, res) => {
-    // res.sendFile('./view/index.html', {root: __dirname});
-    res.sendFile(path.join(__dirname, 'view', 'index.html'));
-});
-app.get('/old-page(.html)?', (req, res) => {
-    res.redirect(301, '/index.html'); // 302 by default
-});
+// routes
+app.use('/', require('./routes/root'));
+app.use('/subdir', require('./routes/subdir'));
+app.use('/employees', require('./routes/api/employees'));
 
-// Route handlers
-app.get('/hello(.html)?', (req, res, next) => {
-    console.log("percobaan");
-    next();
-}, (req, res) => {
-    res.send("heloo world");
-});
 
 app.all('/*', (req, res) => {
     res.status(404);
