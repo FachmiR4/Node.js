@@ -1,0 +1,2 @@
+20240326	10:11:32	08044ffb-62da-476f-861b-60774677678a	Error: Not allowed by CORS
+20240326	10:21:21	dafd3c5c-6d3d-4229-a0a3-2db324e6b156	TypeError: req.sendFile is not a function
