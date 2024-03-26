@@ -38,3 +38,5 @@
 20240326	22:11:14	eb5c8659-f6f6-4eda-8fd4-ec09213813ec	GET	undefined	/employees
 20240326	22:13:15	8a78112d-562d-43bc-9103-93250ba394c7	GET	undefined	/employees
 20240326	22:13:30	1a5447ea-9795-4bc8-9e01-cbcadad7128a	POST	undefined	/employees
+20240326	23:09:45	272a61d6-7d71-446c-9c55-87ba00813bed	POST	undefined	/employees
+20240326	23:14:01	81b7f46f-fb87-4145-8ae0-5fd8520cc40c	POST	undefined	/employees
