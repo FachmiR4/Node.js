@@ -4,6 +4,8 @@ const path =  require("path");
 const cors = require('cors')
 const corsOptions = require('./config/corsOptions');
 const { logger } = require('./middleware/logEvent');
+const verifyJWT = require('./middleware/verifyJWT');
+const cookieParser = require('cookie-parser');
 const errorHandler  = require('./middleware/errorHandler');
 const routes = require('./routes/subdir');
 const PORT = process.env.PORT || 3500;
@@ -21,6 +23,9 @@ app.use(express.urlencoded({extended: false}));
 // built-in middleware for json
 app.use(express.json());
 
+// middleware for cookies
+app.use(cookieParser())
+
 // serve static filter
 app.use(express.static(path.join(__dirname, '/public')));
 
@@ -28,7 +33,11 @@ app.use(express.static(path.join(__dirname, '/public')));
 app.use('/', require('./routes/root'));
 app.use('/register', require('./routes/register'));
 app.use('/login', require('./routes/auth'));
+app.use('/refresh', require('./routes/refresh'));
+app.use('/logout', require('./routes/logout'));
 app.use('/subdir', require('./routes/subdir'));
+
+app.use(verifyJWT);
 app.use('/employees', require('./routes/api/employees'));
 
 
@@ -46,3 +55,6 @@ app.all('/*', (req, res) => {
 app.use(errorHandler);
 
 app.listen(PORT, () => console.log(`server running on port ${PORT}`))
+
+// for get the token secret in command line
+// require('crypto').randomBytes(64).toString('hex')

@@ -1,2 +1,9 @@
 20240326	10:11:32	08044ffb-62da-476f-861b-60774677678a	Error: Not allowed by CORS
 20240326	10:21:21	dafd3c5c-6d3d-4229-a0a3-2db324e6b156	TypeError: req.sendFile is not a function
+20240327	22:07:55	5be0c550-a412-45a8-ae09-a13207ab9288	Error: Cannot set headers after they are sent to the client
+20240327	22:08:07	ce203858-cd95-4a85-940a-4721c87e6f18	Error: Cannot set headers after they are sent to the client
+20240327	22:11:29	aadd6ebf-b478-4542-9f1e-6200d9d29266	Error: Cannot set headers after they are sent to the client
+20240327	22:15:02	b91a0d93-e967-4398-ad7c-fd33c8ca72a5	Error: Cannot set headers after they are sent to the client
+20240327	22:21:13	6b1f943c-0076-4fe1-877f-edffd33cf842	Error: Cannot set headers after they are sent to the client
+20240327	23:28:41	ba0a9e09-29ad-41dc-8170-37069af2c1d1	ReferenceError: usersDB is not defined
+20240327	23:31:23	f73f362f-1a7f-4d92-82e3-57f64779a721	Error: Cannot set headers after they are sent to the client
