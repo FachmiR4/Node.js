@@ -113,3 +113,17 @@
 20240328	15:10:12	1068f89d-d1cf-430d-9898-93043d6f42ee	GET	undefined	/refresh
 20240328	15:10:25	c5d3cc75-f660-4918-bdd8-c5fb3b00bb28	POST	undefined	/login
 20240328	15:10:30	b8043ac7-4819-4b35-a1d6-92c2a8764f7a	GET	undefined	/refresh
+20240328	21:46:30	fc0fc18b-744e-4df9-b3b8-e0714f393d7d	POST	undefined	/login
+20240328	21:46:49	5a0edb21-e579-4d31-bd4e-b9c40b015621	POST	undefined	/login
+20240328	21:47:31	f13be88d-673d-4051-a3ba-9f0181dfdd44	GET	undefined	/employees
+20240328	21:48:12	726dbaaa-7294-4a39-b14c-41258421ad7a	POST	undefined	/employees
+20240328	21:49:12	cfc4d079-8c76-4b55-9271-08a3c18927b9	POST	undefined	/employees
+20240328	21:52:09	0bfc5ea8-e888-4805-8198-229c10ad201c	POST	undefined	/login
+20240328	21:52:28	98ceb780-d43f-4a23-abea-9538e43da020	POST	undefined	/employees
+20240328	21:52:57	5483775b-a116-4d8e-ac3d-594a362fce36	GET	undefined	/employees
+20240328	21:53:04	b3c9d698-0e17-4199-afbd-9422ac60a3be	GET	undefined	/employees
+20240328	21:53:07	59eadd44-d987-4a54-aa8d-e563ccd829fd	POST	undefined	/employees
+20240328	21:53:14	10b23857-5f20-4ed9-ba26-ee59a67c66dc	POST	undefined	/employees
+20240328	21:53:15	4f087f81-7081-470f-9c45-76f0d24ccccf	POST	undefined	/employees
+20240328	21:53:27	4b0295bb-3ede-487c-ad84-16284eec2c2f	POST	undefined	/login
+20240328	21:53:35	a086cd88-7bc9-499a-8389-8777a9d2e87e	POST	undefined	/employees

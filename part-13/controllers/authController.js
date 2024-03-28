@@ -1,5 +1,5 @@
 const userDB = {
-    users: require('../model/user.json'),
+    users: require('../model/users.json'),
     setUsers: function (data){this.users = data }
 }
 const bcrypt = require('bcrypt');
@@ -17,9 +17,14 @@ const handlerLogin = async (req, res) => {
     // evaluate password 
     const match = await bcrypt.compare(pwd, foundUser.password);
     if (match) {
+        const roles = Object.values(foundUser.roles);
         // create JWTs
         const accessToken = jwt.sign(
-            { "username": foundUser.username },
+            { "UserInfo": {
+                    "username": foundUser.username,
+                    "roles": roles
+                }
+            },
             process.env.ACCESS_TOKEN_SECRET,
             { expiresIn: '30s' }
         );
